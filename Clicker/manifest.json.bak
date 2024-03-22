@@ -1,0 +1,24 @@
+{
+    "name": "Clicker",
+    "manifest_version": 2,
+    "description": "Clicker",
+    "version": "2.0.0",
+    "commands":{"_execute_browser_action":{"suggested_key":{"default":"Ctrl+Shift+U"}}},
+    "permissions": [
+                      "activeTab",
+                      "storage",
+                      "tabs",
+                      "contextMenus",
+                      "browsingData",
+                      "cookies",
+                      "http://*/*",
+                      "https://*/*"
+                  ],
+     "content_scripts": [
+            {
+            "run_at": "document_end",
+            "all_frames": true,
+            "js": [ "insert.js" ],
+            "matches": ["http://*/*", "https://*/*"]
+            }]
+  }

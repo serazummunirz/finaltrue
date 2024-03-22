@@ -1,0 +1,13 @@
+selenium==4.9.0
+webdriver_manager==4.0.1
+google-api-core==2.14.0
+google-auth-oauthlib==1.1.0
+google-api-python-client==2.108.0
+bs4==0.0.1
+python-anticaptcha==1.0.0
+psutil==5.9.6
+Flask==3.0.0
+Flask-Cors==4.0.0
+2captcha-python==1.2.2
+customtkinter==5.2.2
+licensing==0.44
