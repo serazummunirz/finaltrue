@@ -55,12 +55,31 @@ function checkCaptchaByXPath(xpath) {
 // Function to find the element based on XPath and click it
 function checkBoxByXPath(xpath) {
   const element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+  // if (element) {
+  //   element.click();
+  //   console.log(`Clicked element with XPath: ${xpath}`);
+  // } else {
+  //     console.log(`Not clicked`);
+  //  }
   if (element) {
-    element.click();
-    console.log(`Clicked element with XPath: ${xpath}`);
+    let url = "http://127.0.0.1:5000/browser/1";
+    let payload = {
+      id: 1,
+      status: 3
+    }
+    let options = {
+      method: "PUT",
+      headers: {
+      "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload)
+    }
+    fetch(url, options)
+    .then(response => console.log(response.status))
+    console.log(`Updated API Request`);
   } else {
-      console.log(`Not clicked`);
-   }
+    console.log(`Not clicked`);
+  }
 }
 
 
@@ -71,7 +90,7 @@ function checkForXPath() {
     checkElementByXPath(inputXpath);
     checkBoxByXPath(checkXpath);
     checkCaptchaByXPath(hCaptchapath);
-  }, 500); // Adjust the interval as needed (in milliseconds)
+  }, 5000); // Adjust the interval as needed (in milliseconds)
 }
 
 // Initiate the process on page load

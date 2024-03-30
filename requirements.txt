@@ -11,3 +11,4 @@ Flask-Cors==4.0.0
 2captcha-python==1.2.2
 customtkinter==5.2.2
 licensing==0.44
+pynput==1.7.6

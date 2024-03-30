@@ -1,8 +1,12 @@
 operating_system = "linux"
-
+from pynput.mouse import Button, Controller as MouseController
+from pynput.keyboard import Key, Controller as KeyboardController
 
 import os
 import customtkinter as ctk
+
+mh = 1500
+mv = 400
 
 if os.path.exists('db.sqlite'):
     os.remove('db.sqlite')
@@ -406,6 +410,18 @@ def get_links(street, state):
             break
         elif db_state_dict[1] == 2:
             break
+        elif db_state_dict[1] == 3:
+            mouse = MouseController()
+            mouse.position = (mh, mv)
+            mouse.click(Button.left, 1)
+            from pynput.keyboard import Key, Controller as KeyboardController
+            keyboard = KeyboardController()
+            keyboard.press(Key.tab)
+            keyboard.release(Key.tab)
+            time.sleep(1)
+            keyboard.press(Key.space)
+            keyboard.release(Key.space)
+            time.sleep(5)
         print("Browser Not Ready")
         time.sleep(1)
 
@@ -463,6 +479,18 @@ def open_persons(url, street, name, address, browser, sheet_name, sheet_id):
             break
         elif db_state_dict[1] == 2:
             break
+        elif db_state_dict[1] == 3:
+            mouse = MouseController()
+            mouse.position = (mh, mv)
+            mouse.click(Button.left, 1)
+            from pynput.keyboard import Key, Controller as KeyboardController
+            keyboard = KeyboardController()
+            keyboard.press(Key.tab)
+            keyboard.release(Key.tab)
+            time.sleep(1)
+            keyboard.press(Key.space)
+            keyboard.release(Key.space)
+            time.sleep(5)
         print("Browser Not Ready")
         time.sleep(1)
 
