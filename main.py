@@ -1,6 +1,5 @@
 operating_system = "windows"
 from pynput.mouse import Button, Controller as MouseController
-from pynput.keyboard import Key, Controller as KeyboardController
 
 import os
 import customtkinter as ctk
@@ -12,7 +11,7 @@ if os.path.exists('db.sqlite'):
     os.remove('db.sqlite')
 
 from licensing.models import *
-from licensing.methods import Key, Helpers
+from licensing.methods import Helpers
 
 
 def invalid_license_error():
@@ -37,6 +36,7 @@ def license_is_valid(license_key):
     RSAPubKey = "<RSAKeyValue><Modulus>w2ajQuQeNN+zcqaLZkL6pm9tZiCq/SeEZ/La/MwKiJu1qrg96i5tZ59vlgInpPX8rd+CGoUR4mB9IsUi75Z/HyXuVdwPFPu7hSvxkhX4C7I8JanNxt5jbvEl7hYX7NuzawORphIuxpep22TZBMRB8279cex41gClM/wrdjxbtryUdqDpgRaHYdI7+JO02kp9WuI3l4/cXnvgAK3/snNIKkNhZqVE6Ukv6cbJTTh0gMtvwnWZw5KUHm5CqKsSW5O5kWLYdZmaRHtHr0Lvm2HYBfnl563T0yfd9/i7tyrN05GQXAaSJSLuxBXZA1cI0gEYKOAS/+atcjQXYHdIl3ArpQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
     auth = "WyI3ODE5MjE2OSIsIjA0TFR4RDl2aW1aUlBkbTdtYVNHb2tIbXJ2clZQM2RZTXlwRm1YbkQiXQ=="
 
+    from licensing.methods import Key
     result = Key.activate(token=auth,\
                     rsa_pub_key=RSAPubKey,\
                     product_id=24644, \
