@@ -1,4 +1,4 @@
-operating_system = "linux"
+operating_system = "windows"
 from pynput.mouse import Button, Controller as MouseController
 from pynput.keyboard import Key, Controller as KeyboardController
 
